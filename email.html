@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Update</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            color: #333333;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #e7eaee;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .header, .footer {
+            padding: 20px;
+            background-color: #6FC0DB;
+            color: #000000;
+            text-align: center;
+            animation: slideDown 1s ease-in-out;
+        }
+        .body {
+            padding: 20px;
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .body h2 {
+            color: #000000;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .body a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .section {
+            padding: 20px;
+            background-color: #e8ecf1;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .section h3 {
+            color: #1a1a1a;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .section p {
+            color: #4a4a4a;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .section a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .tips-section {
+            display: flex;
+            align-items: center;
+        }
+        .tips-section img {
+            width: 50%;
+            margin-right: 20px;
+            border-radius: 8px;
+            animation: fadeInLeft 1s ease-in-out;
+        }
+        .tips-section .tips {
+            width: 50%;
+            animation: fadeInRight 1s ease-in-out;
+        }
+        .property-card {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #6FC0DB;
+            color: rgb(0, 0, 0);
+            padding: 15px 0;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            margin-top: 20px;
+            animation: bounceIn 1s ease-in-out;
+        }
+        .footer p {
+            font-size: 12px;
+        }
+        .footer img {
+            max-width: 100px;
+            max-height: 50px;
+            margin: 0 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        table th, table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        table th {
+           background-color: #f2f2f2;
+           color: #333;
+        }
+        table tbody tr:nth-child(even) {
+           background-color: #f9f9f9;
+        }
+        table tbody tr:hover {
+           background-color: #e0f7fa;
+        }
+        .column1 {
+           background-color:#2196f3;
+           color: white;
+        }
+        .column2 {
+           background-color:#2196f3;
+           color: white;
+        }
+        .column3 {
+           background-color: #2196f3;
+           color: white;
+        }
+
+        
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInLeft {
+            from {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInRight {
+            from {
+                transform: translateX(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes bounceIn {
+            from, 20%, 40%, 60%, 80%, to {
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+            0% {
+                opacity: 0;
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+            20% {
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+            40% {
+                transform: scale3d(0.9, 0.9, 0.9);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            80% {
+                transform: scale3d(0.97, 0.97, 0.97);
+            }
+            to {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <center class="container">
+        <!-- Header -->
+        <table class="header" style="width: 100%;">
+            <tr>
+                <td style="text-align: left;">
+                    <h1>Welcome to Real Estate</h1>
+                    <p>“Don't wait for the right opportunity; create it”</p>
+                </td>
+                <td style="text-align: right;">
+                    <img src="img/logo.png" alt="Logo" style="max-width: 100px;">
+                </td>
+            </tr>
+        </table>
+
+        <!-- Body -->
+        <div class="body">
+            <!-- Rates Section -->
+            <div class="section">
+                <h2>Current Rates</h2>
+                <table>
+                    <thead>
+                      <tr>
+                        <th class="column1">TERME</th>
+                        <th class="column2">TAUX FIXES</th>
+                        <th class="column3">TAUX VARIABLES</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1 an</td>
+                        <td>6.74%</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>2ans</td>
+                        <td>6.09%</td>
+                        <td><!--inset--></td>
+                      </tr>
+                      <tr>
+                        <td>3ans</td>
+                        <td>4.99%</td>
+                        <td>6.85%</td>
+                      </tr>
+                      <tr>
+                        <td>4ans</td>
+                        <td>4.99%</td>
+                        <td><!--inset--></td>
+                      </tr>
+                      <tr>
+                        <td>5ans</td>
+                        <td>4.84%</td>
+                        <td>6.25%</td>
+                      </tr>
+                      <tr>
+                        <td>7ans</td>
+                        <td>4.99%</td>
+                        <td><!--inset--></td>
+                      </tr>
+                      <tr>
+                        <td>10ans</td>
+                        <td>5.85%</td>
+                        <td><!--inset--></td>
+                      </tr>
+                   
+                    </tbody>
+                  </table>
+                  
+                  </body>
+                  </html>
+            </div>
+
+            <!-- Tips/Market Information Section -->
+            <div class="section tips-section">
+                <img src="https://img.freepik.com/free-photo/villa-house-model-key-drawing-retro-desktop-real-estate-sale-concept_1387-312.jpg?size=626&ext=jpg" alt="Tips & Market Information">
+                <div class="tips">
+                    <h2>Market Information</h2>
+                    <p>Diversify your investments across various asset classes to reduce risk. Stay informed with market trends and news to make well-informed decisions, balancing short-term opportunities with long-term growth strategies. Use risk management tools like stop-loss orders during market volatility. Keep an eye on economic indicators such as GDP growth, inflation, and interest rates to guide your investment approach effectively.</p>
+                </div>
+            </div>
+
+            <!-- Personal Information and Logo Section -->
+            <div class="section" style="display: flex; align-items:justify;">
+                <div style="flex: 1; text-align: justify;" >
+                    <h2>Personal Information</h2>
+                    <p>Name: [Your Name]</p>
+                    <p>Phone: [Your Phone Number]</p>
+                    <p>Email: [Your Email]</p>
+                    <a href="#" class="button">Contact Me</a>
+                </div>
+                <div style="flex: 1; text-align: right;">
+                    <img src="img/m.jpeg" alt="Your Logo" width="200"  padding="10px">
+                </div>
+            </div>
+
+            <!-- Website and Online Application Link Section -->
+            <div class="section">
+                <h2>Website & Online Application</h2>
+                <p>Visit our website: <a href="#" class="button">More Details</a></p>
+                <p>Apply online: <a href="https://mtgapp.scarlettnetwork.com/Carlos_Beauregard/home" class="button">Apply Online</a></p>
+            </div>
+
+            <!-- Real Estate Images -->
+            <div class="section">
+                <h2>Featured Properties</h2>
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Property 1">
+                <img src="https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Property 2">
+            </div>
+
+            <p>If you did not request this, please ignore this email.</p>
+            <p>Thank you,<br>Real Estate Team</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h2>Our Business Partners</h2>
+            <img src="img/logo1.png" alt="Logo 1">
+            <img src="img/logo2.png" alt="Logo 2">
+            <img src="img/logo3.png" alt="Logo 3">
+            <img src="img/logo4.png" alt="Logo 4">
+            <img src="img/logo5.png" alt="Logo 5">
+            <img src="img/logo6.png" alt="Logo 6">
+            <p>&copy; 2024 Real Estate. All rights reserved.</p>
+        </div>
+    </center>
+</body>
+</html>
